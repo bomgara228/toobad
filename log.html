@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .box {
+            border: 2px solid grey;
+            width: 25vw;
+            height: 15vw;
+            box-shadow: 1px 1px 15px grey;
+            border-radius: 15px;
+            position: absolute;
+            padding: 10px;
+            left: 35vw;
+            top: 35vh;
+        }
+        
+        #but1 {
+            float: right;
+            margin: 10px;
+        }
+        #but2 {
+            float: right;
+            margin: 10px;
+        }
+        .log {
+            border-radius: 10px;
+            width: 100%;
+        }
+        .pas {
+            border-radius: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn btn-primary" id="but1">Log in</button>
+
+    <div class="box" >
+        <h5>User Name</h5>
+        <input type="text" class="log">
+        <h5>Password</h5>
+        <input type="password" class="pas">
+        <button type="button" class="btn btn-primary" id="but2">confirm</button>
+    </div>
+    
+
+    <script>
+        
+
+        let log = document.querySelector('.log');
+        let pas = document.querySelector('.pas');
+        let btn2 = document.getElementById('but2');
+        let btn1 = document.getElementById('but1');
+        let box = document.querySelector('.box');
+
+        btn1.addEventListener('mouseup', function(){ 
+
+        });
+
+        localStorage.setItem('login', 'я');
+        localStorage.setItem('password', '123');
+        btn2.addEventListener('mouseup', function(){if (log.value == localStorage.getItem('login') && pas.value == localStorage.getItem('password')){
+            alert('Все четко');
+        } else {
+            alert('НЕККОРЕКТНЫЕ ДАННЫЕ');
+        }});
+        
+        
+    </script>
+</body>
+</html>
